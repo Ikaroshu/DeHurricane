@@ -1,0 +1,22 @@
+思路：
+做出前后两张图片的关系： LSTM
+每一个台风作为一个数据
+
+影响台风加强的因素：
+    1. 台风结构--IR红外图片 或者 可见光图片 （使用同一套图片）
+    2. SST, Ocean heat content --- 台风区域的平均（当天和前一天的）
+    3. 台风位置 （经度，纬度，作为feature，可以判断陆地），从 track 上得到，台风的移动速度（计算出）
+
+文献1.
+To build a single model for estimating intensity, we used cyclone images from 68 Atlantic cyclones and 30 Pacific cyclones from 1999 to 2014 (http://www.nrlmry.navy.mil/tcdat/)。
+
+台风数据：
+VIS图片：
+全球的台风；每年会有大概50个台风，其中有些没有IR红外或者可见光。1997-2019， 22*50=1100 个台风。
+因为使用LSTM，把每个台风作为一个input。每个台风，有100张图片（15分钟一张图片）。
+但是label 没有那么多？
+
+预处理：
+首先，把每个台风旋转5下，增加数量大小。5500 个台风。
+
+需要去掉所有橙色的线
