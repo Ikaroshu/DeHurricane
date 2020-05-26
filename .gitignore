@@ -1,2 +1,3 @@
 /data_crawler/images/
 .gitignore
+/data/*
