@@ -1,3 +1,4 @@
 /data_crawler/images/
 .gitignore
 /data/*
+/.ipynb_checkpoints/
